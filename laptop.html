@@ -1,0 +1,78 @@
+laptop.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <span class="logo">
+            <a href="index.html#home">
+                <img width="53" src="images logo.png" alt="Logo">
+            </a>
+        </span>
+        <ul>
+            <li><a href="index.html#home">Home</a></li> 
+            <li><a href="index.html#shop">Shop</a></li> 
+            <li><a href="index.html#contact">Contact</a></li> 
+        </ul>
+    </nav>
+    
+
+    <div class="mobile-section" id="mobile">
+        <!-- <h2>Mobile Phones</h2> -->
+        <div class="mobile-grid">
+            <!-- Mobile 1 -->
+            <div class="mobile-card">
+                <img src="laptop1.webp" alt="Mobile 1">
+                <h3>laptop Model 1</h3>
+                <p>Price: ₹41,999</p>
+                <p>Acer Aspire Lite 12th Gen Intel Core i5-12450H Thin and Light</p>
+                <button class="add-to-cart" onclick="addToCart('laptop Model 1', 41999)">Add to Cart</button>
+            </div>
+            <!-- Mobile 2 -->
+            <div class="mobile-card">
+                <img src="laptop2.jpg" alt="Mobile 2">
+                <h3>laptop Model 2</h3>
+                <p>Price: ₹39,999</p>
+                <p>ASUS Vivobook 14 Thin and Light Laptop, IntelCore i3-</p>
+                <button class="add-to-cart" onclick="addToCart('laptop Model 2', 39999)">Add to Cart</button>
+            </div>
+            
+            <div class="mobile-card">
+                <img src="laptop3.jpg" alt="Mobile 2">
+                <h3>laptop Model 3</h3>
+                <p>Price: ₹39,999</p>
+                <p>HP Laptop 15s, AMD Ryzen 3 5300U, 15.6-inch (39.6 cm)</p>
+                <button class="add-to-cart" onclick="addToCart('laptop Model 3', 39999)">Add to Cart</button>
+            </div>
+            <div class="mobile-card">
+                <img src="laptop4.jpg" alt="Mobile 2">
+                <h3>laptop Model 4</h3>
+                <p>Price: ₹39,999</p>
+                <p>Dell [Smartchoice] Core i3-1215U, 12th Gen</p>
+                <button class="add-to-cart" onclick="addToCart('laptop Model 4', 39999)">Add to Cart</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Add a Cart Section -->
+    <div class="cart-section" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+        <a href="payment.html">
+            <button class="payment-button">Proceed to Payment</button>
+        </a>
+        
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>
