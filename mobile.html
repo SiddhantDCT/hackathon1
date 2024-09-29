@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <span class="logo">
+            <a href="index.html#home">
+                <img width="53" src="luxi.JPG" alt="Logo">
+            </a>
+        </span>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="index.html#foooter">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Shop Section -->
+    <div class="mobile-section" id="mobile">
+        <div class="mobile-grid">
+            <!-- Mobile 1 -->
+            <div class="mobile-card">
+                <img src="model 1.jpg" alt="Mobile 1">
+                <h3>Mobile Model 1</h3>
+                <p>Price: ₹41,999</p>
+                <p>Apple iPhone 13 (128GB) - GREEN</p>
+                <button class="add-to-cart" onclick="addToCart('Mobile Model 1', 41999)">Add to Cart</button>
+            </div>
+            <!-- Mobile 2 -->
+            <div class="mobile-card">
+                <img src="model 2.jpg" alt="Mobile 2">
+                <h3>Mobile Model 2</h3>
+                <p>Price: ₹39,999</p>
+                <p>Apple iPhone 13 (64GB) - (Product) RED</p>
+                <button class="add-to-cart" onclick="addToCart('Mobile Model 2', 39999)">Add to Cart</button>
+            </div>
+
+            <!-- Mobile 3 -->
+            <div class="mobile-card">
+                <img src="model 3.jpg" alt="Mobile 2">
+                <h3>Mobile Model 3</h3>
+                <p>Price: ₹79,999</p>
+                <p>Apple iPhone 16 (32GB) - (Product) WHITE</p>
+                <button class="add-to-cart" onclick="addToCart('Mobile Model 2', 39999)">Add to Cart</button>
+            </div>
+
+            <!-- Mobile 4 -->
+            <div class="mobile-card">
+                <img src="model 4.jpg" alt="Mobile 2">
+                <h3>Mobile Model 4</h3>
+                <p>Price: ₹69,999</p>
+                <p>Apple iPhone 15 (128GB) - (Product) BLACK</p>
+                <button class="add-to-cart" onclick="addToCart('Mobile Model 2', 39999)">Add to Cart</button>
+            </div>
+            <!-- Additional Mobile Models as needed... -->
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="cart-section" id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₹<span id="cart-total">0</span></p>
+        <a href="cart.html" id="cartLink">
+            <button class="payment-button">Proceed to Payment</button>
+        </a>
+    </div>
+
+    <!-- JavaScript for Cart and Delete Button -->
+    <script>
+        // Initialize the cart and total variables
+        let cart = [];
+        let total = 0;
+
+        // Function to add items to the cart
+        function addToCart(productName, price) {
+            cart.push({ productName, price });
+            total += price;
+            updateCart();
+            localStorage.setItem("totalAmount", total); // Store total in localStorage
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            // Reduce the total by the price of the removed item
+            total -= cart[index].price;
+            // Remove the item from the cart array
+            cart.splice(index, 1);
+            // Update the cart display
+            updateCart();
+            // Update localStorage with the new total
+            localStorage.setItem("totalAmount", total);
+        }
+
+        // Function to update the cart display
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            // Clear the existing cart items list
+            cartItems.innerHTML = '';
+
+            // Add each item to the display with a Delete button
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    ${item.productName} - ₹${item.price}
+                    <button class="delete-item" onclick="removeFromCart(${index})">Delete</button>
+                `;
+                cartItems.appendChild(li);
+            });
+
+            // Update the total price displayed in the cart
+            cartTotal.textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>
