@@ -1,0 +1,504 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    /* background-color: black; */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: black;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgb(10, 1, 1);
+    
+}
+
+.navbar .logo img {
+    max-height: 48px;
+    width: 300px;
+    position: absolute;
+    top: 0;
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+    background-color: #f90;
+    color: #333;
+}
+
+/* Home Section Styling */
+#home {
+    position: relative;
+    height: 100vh; /* Full height */
+    overflow: hidden;
+}
+
+/* Video Container */
+.video-container {
+    position: absolute;
+    top: 86px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Behind other elements */
+}
+
+/* Overlay for better text visibility */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with transparency */
+    z-index: 0; /* Behind the text content */
+}
+
+/* Home Section Content */
+#home .content {
+    position: relative;
+    z-index: 1; /* Above overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Home Section Headings */
+#home h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Light shadow for text */
+}
+
+#home h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Light shadow for subheadline */
+}
+
+/* Shop Now Button Styling */
+.shop-now-btn {
+    background-color: #FF6F00; /* Vibrant orange color */
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: #e55a00; /* Darker orange for hover effect */
+}
+
+/* Additional Responsive Styles */
+@media screen and (max-width: 768px) {
+    #home h1 {
+        font-size: 32px;
+    }
+
+    #home h3 {
+        font-size: 18px;
+    }
+
+    .shop-now-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}
+
+
+/* Section Container Styling */
+#shop {
+    position: relative; /* Ensures the background image is positioned relative to this container */
+    overflow: hidden; /* Prevents overflow issues if the image is larger */
+    padding: 50px 0; /* Optional padding for the section */
+    background-color: white;
+}
+
+/* Background Image Container */
+/* Styling for the moving text container */
+.moving-text-container {
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflow content */
+    background: rgba(241, 187, 9, 0.66); /* Background for contrast */
+    border-bottom: 2px solid #e0e0e0; /* Optional: Separator line */
+    margin-bottom: 20px; /* Spacing between the text and shop section */
+    height: 60px;
+}
+
+/* Styling for the moving text */
+.moving-text {
+    display: inline-block;
+    font-size: 24px; /* Increase text size */
+    font-weight: bold; /* Make text bold */
+    color: red; /* Red text color */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: moveText 10s linear infinite; /* Animation properties */
+    display: flex;
+    justify-content: space-between;
+    font-size: 50px;
+}
+
+/* Keyframes to animate the text */
+@keyframes moveText {
+    0% {
+        transform: translateX(100%); /* Start position (right outside of view) */
+    }
+    100% {
+        transform: translateX(-100%); /* End position (left outside of view) */
+    }
+}
+
+/* Existing product grid styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+    gap: 30px; /* Spacing between products */
+    justify-items: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+}
+
+/* Individual Product Styling */
+.product {
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    color: black; 
+}
+
+
+.product p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Product Image Styling */
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: rotateY(20deg) rotateX(10deg) scale(1.1); /* Rotate on hover */
+}
+
+
+
+
+/* Footer (Contact Section) */
+#contact {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+#contact h1, .contact-form h2 {
+    color: #f90;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #f90;
+    color: #333;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #fff;
+    color: #f90;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Mobile section styling */
+.mobile-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.mobile-section h2 {
+    margin-bottom: 20px;
+}
+
+.mobile-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.mobile-grid1{
+    display: flex;
+    justify-content: flex-start;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+.mobile-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 220px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mobile-card:hover {
+    transform: translateY(-5px);
+}
+
+.mobile-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.mobile-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.mobile-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.mobile-card .add-to-cart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-card .add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Cart section styling */
+.cart-section {
+    padding: 30px;
+    text-align: center;
+}
+
+.cart-section h2 {
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#cart-items li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cart-total {
+    font-weight: bold;
+}
+
+/* Payment button styling */
+.payment-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+    background-color: #0056b3;
+}
+
+/* Remove Default Link Styles */
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent element */
+}
+
+/* Specific Styling for the Product Link */
+a.product-link {
+    color: #333; /* Set a neutral color for the link text */
+}
+
+a.product-link:hover p {
+    color: #FF6F00; /* Change text color on hover */
+}
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navbar ul li a {
+        font-size: 16px;
+    }
+
+    .product {
+        width: 250px;
+        margin: 20px;
+    }
+
+    .product-image {
+        width: 200px;
+    }
+}
+.checkout-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.checkout-section h2 {
+    margin-bottom: 20px;
+}
+
+.checkout-section label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.checkout-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #6a2121;
+    border-radius: 5px;
+}
+.footer-content {
+    background-image: url(footerimg.jpg);
+    background-color: #5a5757;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center;
+    list-style: none;
+    
+}
+
+.social-media-links {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+}
+
+.social-media-links li {
+    margin: 10px 0; /* Spacing between links */
+}
+
+.social-media-links a {
+    text-decoration: none; /* Remove underline */
+    color: #0e08ba; /* Change color for links */
+}
+
+.social-media-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        display: block;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .product {
+        width: 200px;
+        margin: 15px;
+    }
+
+    .product-image {
+        width: 150px;
+    }
+}
