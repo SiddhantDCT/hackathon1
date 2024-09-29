@@ -1,169 +1,123 @@
+<!-- cart.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Shop</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style1.css">
-   
+    <title>Your Cart</title>
+    <script src="cart.js"></script>
+    <link rel="stylesheet" href="style11.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+        }
+
+        #cartItems {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: blue; /* Blue button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkblue; /* Darker blue on hover */
+        }
+
+        h4 {
+            margin: 20px 0;
+        }
+
+        .photo-card {
+            display: inline-block;
+            width: 200px;
+            height: 250px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .photo-card p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+       
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <span class="logo">
-            <a href="#home">
-                <img height="200" width="63" src="luxi.JPG" alt="Logo">
-            </a>
-        </span>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#foooter">Contact</a></li>
-            
-                <!-- <li id="userSection">
-                <a href="index1.html" class="shop-now-btn">Login</a>
-            </li>  -->
-
-            <li id="userSection">
-                <!-- The text will be replaced by the username -->
-                <a href="redirect.html" class="shop-now-btn" id="loginButton">Login</a>
-                <span id="usernameDisplay" style="display:none;"></span>
-            </li>
-
-        </ul>
-    </nav>
-
-    <!-- Home Section -->
-    <!-- Home Section -->
-<!-- Home Section -->
-<section id="home">
-    <div class="video-container">
-        <!-- Background Video -->
-        <video src="hellovideo.mp4" autoplay loop muted class="bg-video"></video>
-        <!-- Overlay for better text visibility -->
-        <div class="overlay"></div>
-    </div>
-    <div class="content">
-        <div class="para">
-            <h1>Step Up Your Style, Stay Connected, and Get Tech-Savvy!</h1>
-            <h3>Discover top-quality shoes, watches, laptops, and mobile phones all in one place.</h3>
-            <!-- Shop Now Button -->
-            <a href="#shop" class="shop-now-btn">Shop Now</a>
-        </div>
-    </div>
-</section>
-
-<div class="moving-text-container">
-    <div class="moving-text">
-        <p>Flat 20% off on all products!! Hurry up and grab the deal!  </p>
-        <p>Flat 20% off on all products!! Hurry up and grab the deal!  </p>
-        <p>Flat 20% off on all products!! Hurry up and grab the deal!  </p>
-
-    </div>
-</div>
-
-
-
-    <!-- Shop Section -->
-    <section id="shop">
-        
-        <!-- <h1>Shop Section</h1> -->
-        <!-- Product Grid with Hover Effect -->
-        <div class="product-grid">
-            <div class="product">
-                <a href="shoes.html">
-                    <img src="shoes.png" alt="Shoes" class="product-image shoe-image">
-                    <p>Shoes</p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="watch.html">
-                    <img src="watch.webp" alt="Watch" class="product-image watch-image">
-                    <p>Watch</p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="mobile.html">
-                    <img src="mobile.webp" alt="Mobile" class="product-image mobile-image">
-                    <p>Mobile</p>
-                </a>
-            </div>
-            <div class="product">
-                <a href="laptop.html">
-                    <img src="laptop.webp" alt="Laptop" class="product-image laptop-image">
-                    <p>Laptop</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    <h1>Payment Gateway</h1>
+    <!-- <div id="cartItems"></div> -->
+    <a href="upi.html"><button onclick="redirectToPayment()">Proceed to Payment</button></a>
     
-    <div class="moving-text-container">
-        <div class="moving-text">
-            <p>Upto 50% off !! Super Sale !!  </p>
-            <p>Upto 50% off !! Super Sale !!  </p>
-            <p>Upto 50% off !! Super Sale !!  </p>
-    
+    <h2>We're so glad you're here! If you have any questions, feedback, or just want to say hi, don’t hesitate to reach out. We love hearing from our customers!❤️</h2>
+    <h3>You may also like:</h3>
+
+    <div class="photo-cards">
+        <a href="https://www.amazon.in/Zephyrus-GeForce-i7-9750H-Windows-GX531GW-AB76/dp/B07QN3683G/ref=sr_1_1?crid=3TT32X9TKH06A&dib=eyJ2IjoiMSJ9.irHmOQKWe9zD01QIwNG4fMm3RSql31Itm-7tkgFCvjgrs4qjyxBIN6e1oW1lJzBTBJsQZbcnEnbI7XD-FxbNIjCL7UwWyeCPF65fr-L27RCii81-bIfhWKWwU6QzzNVa9pfFG5K6jbe2eO3bZ6V8qc_RYkVw0zQoZtGd0jWr4jbRykb7BeTegK_8UQSRSL-q5E9qQ2PWBRwT6S5LEup4YyLq6IDEnNcAqONtZGyTqFo.cmKFgGcbJquNHqrNq8yoF5gMkz5PCLLc8tMhzUd2EjU&dib_tag=se&keywords=laptop&qid=1727574028&sprefix=laptop%2Caps%2C244&sr=8-1">
+        <div class="photo-card">
+            <img src="youmaylike1.jpg" alt="Product 1">
+            <p><span style="font-weight: bold; font-size: 24px;">★★★★★</span></p></a>
+
+        </div>
+        <div class="photo-card">
+            <a href="https://www.amazon.in/Apple-iPhone-16-128-GB/dp/B0DGJHBX5Y/ref=sr_1_6?crid=14WI9WK8700VV&dib=eyJ2IjoiMSJ9.zKRSVPkKU6xL56Vk_AW13aqg-4GpE7dFwCGgH5DZrO0I8suqY3-DogLYDbpQtZQfV-mB3GHm595Ouuaor5Wnu--2NrA_00nGHkNjbTvUe4TlwBt4yVERWzJP2V9m4sz_cndXmt8UxVmOQiOAd6UIhicwoRHTQob5ZDqkWhtOzgC_3euSj_GJ7Uqkq2-sxofjgzz-Tm_LXSTnVetDSusiV3HlIayWJiRENfp-5LfpmzrgCZybrKZKHBh_ZxQ3LqDzoyQPKuOXLjbMaZf528UKtQ-lRVHzaEzgWnPdDQVwG-4.nGkmS3nYkzoV-D_4MhuK_tOHpx3f_CxVsj6iNa9w3p8&dib_tag=se&keywords=iphone+16&qid=1727574123&sprefix=iphone%2Caps%2C240&sr=8-6">
+            <img src="youmaylike2.jpg" alt="Product 2">
+            <p><span style="font-weight: bold; font-size: 24px;">★★★★</span></p>
+        </a>
+        </div>
+        <div class="photo-card">
+            <a href="https://www.amazon.in/Hamilton-Intra-Matic-Chronograph-Automatic-H38416541/dp/B07Q5D9PRD/ref=sr_1_1?crid=3D7MFD2TWHA7G&dib=eyJ2IjoiMSJ9.9IZWzhj3HFrZTxXRygkvh4xL98TXPHN1FspN-S_3c5e1GB4IQgPBQnzvLu0CLW9hZoYJUDeUmpHRUyjli-0aI_me8LKLWRZ5KGzc84FUjUyeXHX-Bm3ad2Yak9zfMil_o2cakNOOshmDLaIw85yee8XJYlSRJIABHFhPL6w-TD5IxXptLQWxxTpO9l-Y8YRDj9lnbWFiPMzg-yzJX_40bzYkgwiGUfvMIHeN257rjar7mO3XNJA3IS2JGpWfOsZFqDdPRSiyMcfMWv-q23VkRNL-aQZtWeJMM846rkkZmLg.JHuWaoNbC7gvDzdVPRVqevk_OKHcExBrKBzcx--K8AM&dib_tag=se&keywords=watch&qid=1727574234&sprefix=watch%2Caps%2C247&sr=8-1">
+            <img src="youmaylike3.jpg" alt="Product 3">
+            <p><span style="font-weight: bold; font-size: 24px;">★★</span></p>
+        </a>
         </div>
     </div>
 
+    <script>
+        function displayCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartDiv = document.getElementById('cartItems');
+            cartDiv.innerHTML = '';
 
-    <section id="shop">
-    <div class="product-grid">
-        <div class="product">
-            <a href="shirt.html">
-                <img src="shirt.webp" alt="Shoes" class="product-image shoe-image">
-                <p>Shirts</p>
-            </a>
-        </div>
-        <div class="product">
-            <a href="sweatshirts.html">
-                <img src="sweatshirts.webp" alt="Watch" class="product-image watch-image">
-                <p>Sweat Shirts</p>
-            </a>
-        </div>
-        <div class="product">
-            <a href="trousers.html">
-                <img src="trousers.webp" alt="Mobile" class="product-image mobile-image">
-                <p>Trousers</p>
-            </a>
-        </div>
-        <div class="product">
-            <a href="jeans.html">
-                <img src="jeanshalwa.webp" alt="Laptop" class="product-image laptop-image">
-                <p>Jeans</p>
-            </a>
-        </div></section>
-    
+            if (cartItems.length === 0) {
+                cartDiv.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cartItems.forEach(item => {
+                    cartDiv.innerHTML += `<p>${item.name} - $${item.price} x ${item.quantity}</p>`;
+                });
+            }
+        }
 
-    <div id="foooter" class="footer-content">
-        <!-- <h3>Contact Us</h3>
-        <p>If you have any questions, feel free to reach out!</p> -->
+        function redirectToPayment() {
+            // Redirect to the payment page (e.g., payment.html)
+            window.location.href = 'payment.html';
+        }
 
-        <div class="last">
-        <h1>Social Media Links:</h1>
-        <ul class="social-media-links">
-            <li><a href="https://www.instagram.com/tihor.7k/" target="_blank">Instagram - Rohit</a></li>
-            <li><a href="https://www.instagram.com/siddhantdct/" target="_blank">Instagram - Siddhant</a></li>
-            <li><a href="https://www.instagram.com/daveyash_67/">Instagram - Yash</a></li>
-        </ul></div>
-
-        <div class="last2"></div>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-            <h1>Contact Us</h1>
-            <li>☎️ Phone: +1 (123) 456-7890</li>
-            <li>📍 Address: 123 Your Street, City, State, ZIP Code</li>
-            <li>💬 Live Chat: Available from 9 AM to 5 PM (Mon-Fri)</li>
-        </ul>
-        
-
-    </div>
-
-    
-    
-
-    <!-- External JS File -->
-    <script src="script.js"></script>
-    <script src="script13.js"></script>
+        // Call displayCartItems on page load
+        document.addEventListener('DOMContentLoaded', displayCartItems);
+    </script>
 </body>
 </html>
